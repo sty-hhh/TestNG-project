@@ -10,4 +10,9 @@
             <class name="com.utexas.ece.CalculatorAdvancedTests"/>
         </classes>
     </test>
+    <test name="Log In Tests">
+        <classes>
+            <class name="com.utexas.ece.LogInTests"/>
+        </classes>
+    </test>
 </suite>
