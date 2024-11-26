@@ -1,1 +1,1 @@
-To run: mvn test
+To run: `mvn test`
