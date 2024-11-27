@@ -6,7 +6,10 @@ import org.testng.annotations.Test;
 import java.time.Instant;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -80,6 +83,37 @@ public class LogInTests {
         List<WebElement> homePageEleList = homePageElement.findElements(By.xpath(".//*"));
         WebElement heading = homePageEleList.get(0);
         Assert.assertTrue(heading.getText().contains("userForTest17730" + currentTime));
+    }
+
+    @Test(expectedExceptions = NoSuchElementException.class)
+    public void testCreateExistedUser() {
+
+        WebElement createUserForm = driver.findElement(By.className("create-user-form"));
+        List<WebElement> webEleList = createUserForm.findElements(By.xpath(".//*"));
+        WebElement usernameField = webEleList.get(1);
+        WebElement passwordField = webEleList.get(2);
+        WebElement createUserButton = webEleList.get(3);
+
+        String currentTime = Instant.now().toString();
+
+        usernameField.sendKeys("user1");
+        passwordField.sendKeys("passwordFor17730_" + currentTime);
+        createUserButton.click();
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        } catch (NoAlertPresentException e) {
+            e.printStackTrace();
+        }
+
+        WebElement homePageElement = driver.findElement(By.className("user-management-container"));
     }
 
     @AfterClass
