@@ -3,6 +3,7 @@ package com.utexas.ece;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Instant;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -46,6 +47,39 @@ public class LogInTests {
 
         WebElement homePageElement = driver.findElement(By.className("user-management-container"));
         Assert.assertTrue(homePageElement.isDisplayed(), "Login failed! Homepage not visible.");
+
+        List<WebElement> homePageEleList = homePageElement.findElements(By.xpath(".//*"));
+        WebElement heading = homePageEleList.get(0);
+        Assert.assertTrue(heading.getText().contains("user1"));
+    }
+
+    @Test
+    public void testCreateUser() {
+
+        WebElement createUserForm = driver.findElement(By.className("create-user-form"));
+        List<WebElement> webEleList = createUserForm.findElements(By.xpath(".//*"));
+        WebElement usernameField = webEleList.get(1);
+        WebElement passwordField = webEleList.get(2);
+        WebElement createUserButton = webEleList.get(3);
+
+        String currentTime = Instant.now().toString();
+
+        usernameField.sendKeys("userForTest17730" + currentTime);
+        passwordField.sendKeys("passwordFor17730_" + currentTime);
+        createUserButton.click();
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        WebElement homePageElement = driver.findElement(By.className("user-management-container"));
+        Assert.assertTrue(homePageElement.isDisplayed(), "Login failed! Homepage not visible.");
+
+        List<WebElement> homePageEleList = homePageElement.findElements(By.xpath(".//*"));
+        WebElement heading = homePageEleList.get(0);
+        Assert.assertTrue(heading.getText().contains("userForTest17730" + currentTime));
     }
 
     @AfterClass
