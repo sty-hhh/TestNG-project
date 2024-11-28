@@ -51,8 +51,8 @@
         <version>3.1.2</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
             <suiteXmlFile>src/test/resources/dependency.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/parallel.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

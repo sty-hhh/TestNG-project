@@ -4,30 +4,25 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CalculatorNoDependencyTests {
-
     Calculator calculator = new Calculator();
 
     @Test(priority = 1)
     public void testAddition() {
-        int result = calculator.add(3, 2);
-        Assert.assertEquals(result, 5, "Addition failed");
+        Assert.assertEquals(calculator.add(2, 3), 5);
     }
 
     @Test(priority = 2)
     public void testSubtraction() {
-        int result = calculator.subtract(5, 2);
-        Assert.assertEquals(result, 3, "Subtraction failed");
+        Assert.assertEquals(calculator.subtract(5, 3), 2);
     }
 
     @Test(priority = 3)
     public void testMultiplication() {
-        int result = calculator.multiply(3, 2);
-        Assert.assertEquals(result, 6, "Multiplication failed");
+        Assert.assertEquals(calculator.multiply(2, 3), 6);
     }
 
     @Test(priority = 4)
     public void testDivision() {
-        int result = calculator.divide(6, 2);
-        Assert.assertEquals(result, 3, "Division failed");
+        Assert.assertEquals(calculator.divide(6, 2), 3);
     }
 }
