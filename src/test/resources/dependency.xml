@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" parallel="false">
+    <test name="Calculator Dependency Tests">
+        <classes>
+            <class name="com.utexas.ece.CalculatorDependencyTests"/>
+            <class name="com.utexas.ece.CalculatorNoDependencyTests"/>
+        </classes>
+    </test>
+</suite>
