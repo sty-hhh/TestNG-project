@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Calculator Test Suite" parallel="classes" thread-count="2">
+<suite name="Test Suite" parallel="classes" thread-count="2">
     <test name="Basic Tests">
         <classes>
             <class name="com.utexas.ece.CalculatorBasicTests"/>
