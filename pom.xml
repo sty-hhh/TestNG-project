@@ -53,6 +53,7 @@
           <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
             <suiteXmlFile>src/test/resources/dependency.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/resources/group.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>

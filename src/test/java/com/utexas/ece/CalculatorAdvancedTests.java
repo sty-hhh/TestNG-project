@@ -1,6 +1,7 @@
 package com.utexas.ece;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalculatorAdvancedTests {
@@ -124,5 +125,36 @@ public class CalculatorAdvancedTests {
         result = calculator.subtract(result, 50000);
         result = calculator.divide(result, 3);
         Assert.assertEquals(result, 183333);
+    }
+
+    @DataProvider(name = "AdditionData")
+    public Object[][] provideAdditionData() {
+        return new Object[][]{
+                {3, 2, 5},
+                {-1, 4, 3},
+                {0, 0, 0},
+                {100, 200, 300}
+        };
+    }
+
+    @Test(dataProvider = "AdditionData")
+    public void testAddition(int a, int b, int expected) {
+        int result = calculator.add(a, b);
+        Assert.assertEquals(result, expected, "Addition failed");
+    }
+
+    @DataProvider(name = "DivisionData")
+    public Object[][] provideDivisionData() {
+        return new Object[][]{
+                {6, 2, 3},
+                {10, 5, 2},
+                {0, 1, 0}
+        };
+    }
+
+    @Test(dataProvider = "DivisionData")
+    public void testDivision(int a, int b, int expected) {
+        int result = calculator.divide(a, b);
+        Assert.assertEquals(result, expected, "Division failed");
     }
 }
