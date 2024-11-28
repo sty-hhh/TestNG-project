@@ -17,7 +17,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 
 public class LogInTests {
 
@@ -119,7 +118,7 @@ public class LogInTests {
             e.printStackTrace();
         }
 
-        WebElement homePageElement = driver.findElement(By.className("user-management-container"));
+        driver.findElement(By.className("user-management-container"));
 
         if (driver != null) {
             driver.quit();
@@ -224,7 +223,7 @@ public class LogInTests {
             e.printStackTrace();
         }
 
-        WebElement homePageElement = driver.findElement(By.className("user-management-container"));
+        driver.findElement(By.className("user-management-container"));
 
         if (driver != null) {
             driver.quit();
