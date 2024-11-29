@@ -28,6 +28,9 @@ public class LogInTestsChrome {
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
+        WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w1.until(ExpectedConditions.presenceOfElementLocated(By.className("login-form")));
+
         WebElement loginForm = driver.findElement(By.className("login-form"));
         List<WebElement> webEleList = loginForm.findElements(By.xpath(".//*"));
         WebElement usernameField = webEleList.get(1);
@@ -38,8 +41,8 @@ public class LogInTestsChrome {
         passwordField.sendKeys("password");
         loginButton.click();
 
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
-        w.until(ExpectedConditions.presenceOfElementLocated(By.className("user-management-container")));
+        WebDriverWait w2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w2.until(ExpectedConditions.presenceOfElementLocated(By.className("user-management-container")));
 
         WebElement homePageElement = driver.findElement(By.className("user-management-container"));
         Assert.assertTrue(homePageElement.isDisplayed(), "Login failed! Homepage not visible.");
@@ -62,6 +65,9 @@ public class LogInTestsChrome {
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
+        WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w1.until(ExpectedConditions.presenceOfElementLocated(By.className("create-user-form")));
+
         WebElement createUserForm = driver.findElement(By.className("create-user-form"));
         List<WebElement> webEleList = createUserForm.findElements(By.xpath(".//*"));
         WebElement usernameField = webEleList.get(1);
@@ -74,8 +80,8 @@ public class LogInTestsChrome {
         passwordField.sendKeys("passwordFor17730_" + currentTime);
         createUserButton.click();
 
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(30));
-        w.until(ExpectedConditions.presenceOfElementLocated(By.className("user-management-container")));
+        WebDriverWait w2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w2.until(ExpectedConditions.presenceOfElementLocated(By.className("user-management-container")));
 
         WebElement homePageElement = driver.findElement(By.className("user-management-container"));
         Assert.assertTrue(homePageElement.isDisplayed(), "Login failed! Homepage not visible.");
@@ -97,6 +103,9 @@ public class LogInTestsChrome {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
+
+        WebDriverWait w1 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w1.until(ExpectedConditions.presenceOfElementLocated(By.className("create-user-form")));
 
         WebElement createUserForm = driver.findElement(By.className("create-user-form"));
         List<WebElement> webEleList = createUserForm.findElements(By.xpath(".//*"));
