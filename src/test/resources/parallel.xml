@@ -5,6 +5,7 @@
             <class name="com.utexas.ece.LogInTestsChrome"/>
             <class name="com.utexas.ece.LogInTestsFirefox"/>
             <class name="com.utexas.ece.LogInTestsEdge"/>
+            <class name="com.utexas.ece.LogInTestsSafari"/>
         </classes>
     </test>
 </suite>
