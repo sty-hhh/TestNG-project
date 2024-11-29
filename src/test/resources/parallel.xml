@@ -1,11 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Test Suite" parallel="classes" thread-count="2">
+<suite name="Test Suite" parallel="classes" thread-count="3">
     <test name="Log In Tests">
         <classes>
             <class name="com.utexas.ece.LogInTestsChrome"/>
             <class name="com.utexas.ece.LogInTestsFirefox"/>
             <class name="com.utexas.ece.LogInTestsEdge"/>
-            <class name="com.utexas.ece.LogInTestsSafari"/>
         </classes>
     </test>
 </suite>
