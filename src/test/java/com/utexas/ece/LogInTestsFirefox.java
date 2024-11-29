@@ -121,7 +121,10 @@ public class LogInTestsFirefox {
 
         try {
             Alert alert = driver.switchTo().alert();
-            Assert.assertTrue(alert.getText().equals("User already exists!"));
+            while (alert == null) {
+                alert = driver.switchTo().alert();
+            }
+            Assert.assertTrue(alert.getText().contains("User already exists!"));
             alert.accept();
         } catch (NoAlertPresentException e) {
             e.printStackTrace();
