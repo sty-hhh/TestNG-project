@@ -86,7 +86,7 @@ public class LogInTestsSafari {
 
         List<WebElement> homePageEleList = homePageElement.findElements(By.xpath(".//*"));
         WebElement heading = homePageEleList.get(0);
-        Assert.assertTrue(heading.getText().contains("userForTest17730" + currentTime));
+        Assert.assertTrue(heading.getText().contains("SafariUserForTest17730" + currentTime));
 
         if (driver != null) {
             driver.quit();

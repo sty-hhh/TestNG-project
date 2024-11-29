@@ -86,7 +86,7 @@ public class LogInTestsEdge {
 
         List<WebElement> homePageEleList = homePageElement.findElements(By.xpath(".//*"));
         WebElement heading = homePageEleList.get(0);
-        Assert.assertTrue(heading.getText().contains("userForTest17730" + currentTime));
+        Assert.assertTrue(heading.getText().contains("EdgeUserForTest17730" + currentTime));
 
         if (driver != null) {
             driver.quit();
