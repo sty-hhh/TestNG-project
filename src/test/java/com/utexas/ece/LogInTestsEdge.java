@@ -11,18 +11,18 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LogInTestsSafari {
+public class LogInTestsEdge {
 
     @Test
-    public void testLogInSafari() {
+    public void testLogInEdge() {
 
         WebDriver driver;
-
-        driver = new SafariDriver();
+        
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
@@ -55,11 +55,11 @@ public class LogInTestsSafari {
     }
 
     @Test
-    public void testCreateUserSafari() {
+    public void testCreateUserEdge() {
 
         WebDriver driver;
 
-        driver = new SafariDriver();
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
@@ -94,11 +94,11 @@ public class LogInTestsSafari {
     }
 
     @Test
-    public void testCreateExistedUserSafari() {
+    public void testCreateExistedUserEdge() {
 
         WebDriver driver;
 
-        driver = new SafariDriver();
+        driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
