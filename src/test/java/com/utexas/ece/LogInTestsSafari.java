@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LogInTestsSafari {
 
     @Test
-    public void testLogInFirefox() {
+    public void testLogInSafari() {
 
         WebDriver driver;
 
@@ -55,7 +55,7 @@ public class LogInTestsSafari {
     }
 
     @Test
-    public void testCreateUserFirefox() {
+    public void testCreateUserSafari() {
 
         WebDriver driver;
 
@@ -94,7 +94,7 @@ public class LogInTestsSafari {
     }
 
     @Test
-    public void testCreateExistedUserFirefox() {
+    public void testCreateExistedUserSafari() {
 
         WebDriver driver;
 
