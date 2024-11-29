@@ -74,7 +74,7 @@ public class LogInTestsChrome {
 
         String currentTime = Instant.now().toString();
 
-        usernameField.sendKeys("userForTest17730" + currentTime);
+        usernameField.sendKeys("ChromeUserForTest17730" + currentTime);
         passwordField.sendKeys("passwordFor17730_" + currentTime);
         createUserButton.click();
 

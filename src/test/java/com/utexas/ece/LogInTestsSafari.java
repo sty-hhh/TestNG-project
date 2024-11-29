@@ -11,18 +11,18 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LogInTestsFirefox {
+public class LogInTestsSafari {
 
     @Test
-    public void testLogInFirefox() {
+    public void testLogInSafari() {
 
         WebDriver driver;
-
-        driver = new FirefoxDriver();
+        
+        driver = new SafariDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
@@ -55,11 +55,11 @@ public class LogInTestsFirefox {
     }
 
     @Test
-    public void testCreateUserFirefox() {
+    public void testCreateUserSafari() {
 
         WebDriver driver;
 
-        driver = new FirefoxDriver();
+        driver = new SafariDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
@@ -74,7 +74,7 @@ public class LogInTestsFirefox {
 
         String currentTime = Instant.now().toString();
 
-        usernameField.sendKeys("FireFoxUserForTest17730" + currentTime);
+        usernameField.sendKeys("SafariUserForTest17730" + currentTime);
         passwordField.sendKeys("passwordFor17730_" + currentTime);
         createUserButton.click();
 
@@ -94,11 +94,11 @@ public class LogInTestsFirefox {
     }
 
     @Test
-    public void testCreateExistedUserFirefox() {
+    public void testCreateExistedUserSafari() {
 
         WebDriver driver;
 
-        driver = new FirefoxDriver();
+        driver = new SafariDriver();
         driver.manage().window().maximize();
         driver.get("https://haas-app-04db64349bbf.herokuapp.com");
 
