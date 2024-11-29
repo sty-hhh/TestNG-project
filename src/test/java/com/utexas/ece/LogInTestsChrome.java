@@ -119,16 +119,15 @@ public class LogInTestsChrome {
         passwordField.sendKeys("passwordFor17730_" + currentTime);
         createUserButton.click();
 
-        try {
-            Alert alert = driver.switchTo().alert();
-            while (alert == null) {
-                alert = driver.switchTo().alert();
-            }
-            Assert.assertTrue(alert.getText().contains("User already exists!"));
-            alert.accept();
-        } catch (NoAlertPresentException e) {
-            e.printStackTrace();
-        }
+        WebDriverWait w2 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w2.until(ExpectedConditions.alertIsPresent());
+
+        Alert alert = driver.switchTo().alert();
+        Assert.assertTrue(alert.getText().contains("User already exists!"));
+        alert.accept();
+
+        WebDriverWait w3 = new WebDriverWait(driver, Duration.ofSeconds(30));
+        w3.until(ExpectedConditions.not(ExpectedConditions.alertIsPresent()));
 
         Assert.assertEquals(driver.findElements(By.className("user-management-container")).size(), 0);
 
