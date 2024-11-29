@@ -95,7 +95,7 @@ public class LogInTestsFirefox {
         }
     }
 
-    @Test(expectedExceptions = NoSuchElementException.class)
+    @Test
     public void testCreateExistedUserFirefox() {
 
         WebDriver driver;
@@ -121,12 +121,13 @@ public class LogInTestsFirefox {
 
         try {
             Alert alert = driver.switchTo().alert();
+            Assert.assertTrue(alert.getText().equals("User already exists!"));
             alert.accept();
         } catch (NoAlertPresentException e) {
             e.printStackTrace();
         }
 
-        driver.findElement(By.className("user-management-container"));
+        Assert.assertEquals(driver.findElements(By.className("user-management-container")).size(), 0);
 
         if (driver != null) {
             driver.quit();
